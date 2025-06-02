@@ -13,7 +13,7 @@ const UploadForm = () => {
     event.preventDefault();
     if (!id)
       return alert("Please transcribe a file first");
-    fetch(`http://localhost:8000/export/${id}`, {
+    fetch(`https://sentivue-task-production.up.railway.app/export/${id}`, {
       method: "GET",
       headers: {
         'Content-Type': 'application/json'
@@ -50,7 +50,7 @@ const UploadForm = () => {
     setLoading(true);
     const formData = new FormData();
     formData.append("file", file);
-    fetch("http://localhost:8000/transcribe", {
+    fetch("https://sentivue-task-production.up.railway.app/transcribe", {
       method: "POST",
       body: formData,
     })
