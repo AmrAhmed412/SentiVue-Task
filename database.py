@@ -1,6 +1,5 @@
 from sqlalchemy import Column, Integer, String, TIMESTAMP, Boolean,text, create_engine
 from sqlalchemy.dialects.postgresql import UUID
-import uuid
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from dotenv import load_dotenv
