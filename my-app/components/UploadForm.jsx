@@ -82,16 +82,17 @@ const UploadForm = () => {
     }
   }
   return (
-    <div>
+    <div className="container">
       {loading && <div className="loading">
         <div class="loader"></div>
       </div>}
-      <form method="POST" onSubmit={handleSubmit}>
-        <div>
+      <form method="POST" onSubmit={handleSubmit} className="uploadForm">
+        <div className="formGroup">
           <label htmlFor="file" >
             Upload File
           </label>
           <input
+          className="fileInput"
             type="file"
             id="file"
             name="file"
@@ -100,21 +101,23 @@ const UploadForm = () => {
           />
         </div>
         <button
+        className="primaryButton"
           type="submit"
         >
           Start Transcribing
         </button>
       </form>
-      <div>
+      <div className="transcriptContainer">
         <h2>Transcript</h2>
         <textarea
+        className="transcriptBox"
           value={transcript}
           rows="10"
           cols="50"
           placeholder="Your transcript will appear here..."
           disabled={true}
           />
-        <button onClick={handleExport}>
+        <button className="primaryButton" onClick={handleExport}>
           Export SRT file
         </button>
       </div>
