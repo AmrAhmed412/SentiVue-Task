@@ -71,6 +71,7 @@ async def transcribe(file: UploadFile = File(...)):
             else:
                 time.sleep(3)
         srt_response = requests.get(f"{polling_endpoint}/srt?chars_per_caption=32", headers=headers)
+        os.makedirs("SRTDir", exist_ok=True)
         with open(f"SRTDir/transcript_{transcript_id}.srt", "w") as srt_file:
             srt_file.write(srt_response.text)
         # Clean up the temporary file
